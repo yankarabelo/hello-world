@@ -8,12 +8,13 @@ import plotly.graph_objects as go
 
 app = dash.Dash()
 server = app.server
-df = pd.read_csv('https://raw.githubusercontent.com/LeoMonrroy/legendary-palm-tree/master/fakegraph.csv', sep=";")
+#df = pd.read_csv('https://raw.githubusercontent.com/LeoMonrroy/legendary-palm-tree/master/fakegraph.csv', sep=";")
+df = pd.read_csv('https://github.com/yankarabelo/hello-world/blob/master/rawrdata.xlsx?raw=true', sep=";")
 
 app.layout = html.Div(children=[
-    html.H1(children='Försök till visualiseing'),
+    html.H1(children='Försök till visualisering'),
     html.Div(children='''
-        Grupp 6
+        Grupp nr 6
     '''),
     dcc.Graph(
         id='Försök till datavisualisering',
