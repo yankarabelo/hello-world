@@ -10,6 +10,8 @@ app = dash.Dash()
 server = app.server
 #df = pd.read_csv('https://raw.githubusercontent.com/LeoMonrroy/legendary-palm-tree/master/fakegraph.csv', sep=";")
 df = pd.read_csv('https://github.com/yankarabelo/hello-world/raw/master/rawrdata.csv', sep=";")
+sample_data_table = FF.create_table(df.head())
+py.iplot(sample_data_table, filename='sample-data-table')
 
 app.layout = html.Div(children=[
     html.H1(children='Försök till visualisering'),
@@ -22,7 +24,7 @@ app.layout = html.Div(children=[
             'data': [
                 go.Scatter(
                     x=df.Tidpunkter,
-                    y=df.testset,
+                    y=df.ENSG00000283297,
                     mode='lines'
                 )
             ],
