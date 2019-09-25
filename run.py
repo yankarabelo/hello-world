@@ -20,17 +20,10 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='Försök till datavisualisering',
         figure={
-            'data': [
+            'data1': [
                 go.Scatter(
                     x=df.Tidpunkter,
                     y=df.ENSG00000283297,
-                    mode='lines'
-                )
-            ],
-            #'data2': [
-                go.Scatter(
-                    x=df.Tidpunkter,
-                    y=df.ENSG00000283573,
                     mode='lines'
                 )
             ],
@@ -39,5 +32,4 @@ app.layout = html.Div(children=[
                 xaxis={'title' : 'Tid(h)'},
                 yaxis={'title': 'Expression .../...'},
             )
-            #'fig'=
         })])
