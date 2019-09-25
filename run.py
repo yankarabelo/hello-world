@@ -27,7 +27,7 @@ app.layout = html.Div(children=[
                     mode='lines'
                 )
             ],
-            'data2': [
+            #'data2': [
                 go.Scatter(
                     x=df.Tidpunkter,
                     y=df.ENSG00000283573,
@@ -39,4 +39,5 @@ app.layout = html.Div(children=[
                 xaxis={'title' : 'Tid(h)'},
                 yaxis={'title': 'Expression .../...'},
             )
+            #'fig'=
         })])
