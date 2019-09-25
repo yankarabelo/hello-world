@@ -20,7 +20,7 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='Försök till datavisualisering',
         figure={
-            'data1': [
+            'data': [
                 go.Scatter(
                     x=df.Tidpunkter,
                     y=df.ENSG00000283297,
