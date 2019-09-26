@@ -17,6 +17,7 @@ app.layout = html.Div(children=[
     html.Div(children='''
         Grupp nr 6
     '''),
+
     dcc.Graph(
         id='Försök till datavisualisering',
         figure={
@@ -24,6 +25,11 @@ app.layout = html.Div(children=[
                 go.Scatter(
                     x=df.Tidpunkter,
                     y=df.ENSG00000283297,
+                    mode='lines+markers'
+                )
+                go.Scatter(
+                    x=df.Tidpunkter,
+                    y=df.ENSG00000283573,
                     mode='lines+markers'
                 )
             ],
