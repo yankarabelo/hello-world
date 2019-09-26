@@ -22,12 +22,8 @@ app.layout = html.Div(children=[
         id='Försök till datavisualisering',
         figure={
             'data': [
-                go.Scatter(x=df.Tidpunkter, y=df.ENSG00000283297, mode='lines+markers')
-                #go.Scatter(
-                 #   x=df.Tidpunkter,
-                  #  y=df.ENSG00000283573,
-                   # mode='lines+markers'
-                #)
+                go.Scatter(x=df.Tidpunkter, y=df.ENSG00000283297, mode='lines+markers'),
+                go.Scatter(x=df.Tidpunkter, y=df.ENSG00000283573, mode='lines+markers')
             ],
             'layout': go.Layout(
                 title='TH0 Genexpression över tid',
@@ -35,3 +31,5 @@ app.layout = html.Div(children=[
                 yaxis={'title': 'Expression .../...'},
             )
         })])
+
+
