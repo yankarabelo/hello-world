@@ -22,12 +22,7 @@ app.layout = html.Div(children=[
         id='Försök till datavisualisering',
         figure={
             'data': [
-                go.Scatter(
-                    x=df.Tidpunkter,
-                    y=df.ENSG00000283297,
-                    mode='lines+markers'
-                    #name='ENSG00000283297'
-                )
+                go.Scatter(x=df.Tidpunkter, y=df.ENSG00000283297, mode='lines+markers')
                 #go.Scatter(
                  #   x=df.Tidpunkter,
                   #  y=df.ENSG00000283573,
