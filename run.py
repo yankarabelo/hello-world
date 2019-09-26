@@ -26,12 +26,13 @@ app.layout = html.Div(children=[
                     x=df.Tidpunkter,
                     y=df.ENSG00000283297,
                     mode='lines+markers'
+                    #name='ENSG00000283297'
                 )
-                go.Scatter(
-                    x=df.Tidpunkter,
-                    y=df.ENSG00000283573,
-                    mode='lines+markers'
-                )
+                #go.Scatter(
+                 #   x=df.Tidpunkter,
+                  #  y=df.ENSG00000283573,
+                   # mode='lines+markers'
+                #)
             ],
             'layout': go.Layout(
                 title='TH0 Genexpression över tid',
