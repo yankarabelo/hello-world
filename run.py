@@ -13,7 +13,7 @@ df = pd.read_csv('https://github.com/yankarabelo/hello-world/raw/master/rawrdata
 
 
 app.layout = html.Div(children=[
-    html.H1(children='Försök till visualisering--2'),
+    html.H1(children='Försök till visualisering--3'),
     html.Div(children='''
         Grupp nr 6
     '''),
