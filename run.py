@@ -4,7 +4,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import plotly.graph_objects as go
-import numpy as np 
 
 
 app = dash.Dash()
@@ -14,7 +13,7 @@ df = pd.read_csv('https://github.com/yankarabelo/hello-world/raw/master/rawrdata
 
 
 app.layout = html.Div(children=[
-    html.H1(children='Försök till visualisering--3'),
+    html.H1(children='Försök till visualisering'),
     html.Div(children='''
         Grupp nr 6
     '''),
