@@ -11,7 +11,6 @@ server = app.server
 #df = pd.read_csv('https://raw.githubusercontent.com/LeoMonrroy/legendary-palm-tree/master/fakegraph.csv', sep=";")
 df = pd.read_csv('https://github.com/yankarabelo/hello-world/raw/master/rawrdata.csv', sep=";")
 
-
 app.layout = html.Div(children=[
     html.H1(children='Försök till visualisering'),
     html.Div(children='''
@@ -32,6 +31,14 @@ app.layout = html.Div(children=[
                 xaxis={'title' : 'Tid(h)'},
                 yaxis={'title': 'Expression .../...'},
             )
-        })])
+        }),
+    dcc.Input(id='my-id', value='initial value', type="text"),
+    html.Div(id='my-div')
+])
 
-
+@app.callback(
+    Output(component_id='my-div', component_property='children'),
+    [Input(component_id='my-id', component_property='value')]
+)
+def update_output_div(input_value):
+    return 'You\'ve entered "{}"'.format(input_value)
