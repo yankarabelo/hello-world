@@ -19,15 +19,12 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure={
             'data': [
-                go.Scatter(x=df.Tidpunkter, y=df.ENSG00000283297, name='ENSG00000283297', mode='lines+markers'),
-                go.Scatter(x=df.Tidpunkter, y=df.ENSG00000283573, name='ENSG00000283573 ', mode='lines+markers'),
-                go.Scatter(x=df.Tidpunkter, y=df.ENSG00000282961, name='ENSG00000282961 ', mode='lines+markers')
-
+                {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
+                {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
             ],
-            'layout': go.Layout(
-                title='TH0 Genexpression över tid',
-                xaxis={'title' : 'Tid(h)'},
-                yaxis={'title': 'Expression .../...'},
+            'layout': {
+                'title': 'Dash Data Visualization'
+            }
         }
     ),
     dcc.Input(id='my-id', value='initial value', type="text"),
@@ -40,4 +37,3 @@ app.layout = html.Div(children=[
 )
 def update_output_div(input_value):
     return 'You\'ve entered "{}"'.format(input_value)
-
