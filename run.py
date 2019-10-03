@@ -1,24 +1,22 @@
-# -*- coding: utf-8 -*-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import pandas as pd
-import plotly.graph_objects as go
+from dash.dependencies import Input, Output
+from flask import Flask
+import os
 
-
-app = dash.Dash()
-server = app.server
-#df = pd.read_csv('https://raw.githubusercontent.com/LeoMonrroy/legendary-palm-tree/master/fakegraph.csv', sep=";")
-df = pd.read_csv('https://github.com/yankarabelo/hello-world/raw/master/rawrdata.csv', sep=";")
+server = Flask(__name__)
+server.secret_key = os.environ.get('secret_key', 'secret')
+app = dash.Dash(name = __name__, server = server)
+app.config.supress_callback_exceptions = True
 
 app.layout = html.Div(children=[
-    html.H1(children='Försök till visualisering'),
+    html.H1(children='Hello Dash'),
     html.Div(children='''
-        Grupp nr 6
+        Dash: A web application framework for Python.
     '''),
-
     dcc.Graph(
-        id='Försök till datavisualisering',
+        id='example-graph',
         figure={
             'data': [
                 go.Scatter(x=df.Tidpunkter, y=df.ENSG00000283297, name='ENSG00000283297', mode='lines+markers'),
@@ -30,8 +28,8 @@ app.layout = html.Div(children=[
                 title='TH0 Genexpression över tid',
                 xaxis={'title' : 'Tid(h)'},
                 yaxis={'title': 'Expression .../...'},
-            )
-        }),
+        }
+    ),
     dcc.Input(id='my-id', value='initial value', type="text"),
     html.Div(id='my-div')
 ])
@@ -42,3 +40,4 @@ app.layout = html.Div(children=[
 )
 def update_output_div(input_value):
     return 'You\'ve entered "{}"'.format(input_value)
+
